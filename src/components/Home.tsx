@@ -2,7 +2,7 @@ import React from 'react';
 import Hello from './Hello';
 
 interface Props {
-  name?: string;
+  name?: string; // name is an optional string
 }
 
 interface State {
