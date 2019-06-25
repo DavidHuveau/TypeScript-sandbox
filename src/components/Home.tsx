@@ -13,10 +13,14 @@ interface State {
 // class Home extends React.Component<{}, State> {
 class Home extends React.Component<Props, State> {
 
+  // static defaultProps: Partial<Props> = {
+  //   name: "David"
+  // };
+
   constructor(props: any) {
     super(props);
-    this.onClickBtn1 = this.onClickBtn1.bind(this);
-    this.onClickBtn2 = this.onClickBtn2.bind(this);
+    this.changeName = this.changeName.bind(this);
+    this.incrementSmiles = this.incrementSmiles.bind(this);
 
     this.state = {
       name: this.props.name || "David",
@@ -24,14 +28,14 @@ class Home extends React.Component<Props, State> {
     }
   }
 
-  onClickBtn1() {
+  changeName() {
     this.setState({
       name: "123"
       // name: 1+2+3
     });
   }
 
-  onClickBtn2() {
+  incrementSmiles() {
     this.setState(state => ({
       enthusiasmLevel: state.enthusiasmLevel + 1
     }));
@@ -39,13 +43,13 @@ class Home extends React.Component<Props, State> {
 
   render() {
     let { name, enthusiasmLevel } = this.state;
-
     return (
-      <div className="App" style={{ marginBottom: "20px" }}>
-        <Hello name={name} enthusiasmLevel={enthusiasmLevel}></Hello>
-        <button name="btn1" onClick={this.onClickBtn1}>Change</button>
-        <button name="btn2" onClick={this.onClickBtn2}>Smile++</button>
-      </div>
+      <Hello
+        name={name}
+        enthusiasmLevel={enthusiasmLevel}
+        changeName={this.changeName}
+        incrementSmiles={this.incrementSmiles}
+      />
     );
   }
 }

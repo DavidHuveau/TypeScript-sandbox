@@ -3,12 +3,16 @@ import * as React from 'react';
 export interface Props {
   name: string;
   enthusiasmLevel: number;
+  changeName: () => void;
+  incrementSmiles: () => void;
 }
 
-const Hello = ({ name, enthusiasmLevel = 1 }: Props) => {
+const Hello = ({ name, enthusiasmLevel = 1, changeName, incrementSmiles }: Props) => {
   return (
-    <div>
+    <div style={{ marginBottom: "20px" }}>
       Hello {name + getExclamationMarks(enthusiasmLevel)}
+      <button name="btn1" onClick={changeName}>Change</button>
+      <button name="btn2" onClick={incrementSmiles}>Smile++</button>
     </div>
   );
 }
