@@ -1,3 +1,2 @@
-https://github.com/microsoft/TypeScript-React-Starter
-
-https://www.typescriptlang.org/docs/home.html
+https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter
+https://medium.com/@rossbulat/how-to-use-typescript-with-react-and-redux-a118b1e02b76
