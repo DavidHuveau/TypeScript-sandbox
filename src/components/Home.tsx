@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Hello from './Hello';
 
 interface Props {
@@ -11,14 +11,15 @@ interface State {
 }
 
 // class Home extends React.Component<{}, State> {
-class Home extends React.Component<Props, State> {
+class Home extends Component<Props, State> {
 
   // static defaultProps: Partial<Props> = {
   //   name: "David"
   // };
 
-  constructor(props: any) {
+  constructor(props: Props) {
     super(props);
+    
     this.changeName = this.changeName.bind(this);
     this.incrementSmiles = this.incrementSmiles.bind(this);
 
@@ -43,6 +44,7 @@ class Home extends React.Component<Props, State> {
 
   render() {
     let { name, enthusiasmLevel } = this.state;
+
     return (
       <Hello
         name={name}

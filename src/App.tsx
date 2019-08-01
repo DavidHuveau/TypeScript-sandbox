@@ -38,11 +38,11 @@ const App = () => {
   // console.log(display.size);
 
 
-  let a = withUID(new Car("Megane RS"));
-  console.log(a);
-  a = withUID(new MotorBike("Honda VFR 750"));
-  a = withUID({ model: "fake Honda Chinese v1" }); // this object is assignable to type 'IVehicle'
-  const b = withUID({ name: "fake Honda Chinese v2" }); // this object is not assignable to type 'IVehicle'
+  // let a = withUID(new Car("Megane RS"));
+  // console.log(a);
+  // a = withUID(new MotorBike("Honda VFR 750"));
+  // a = withUID({ model: "fake Honda Chinese v1" }); // this object is assignable to type 'IVehicle'
+  // const b = withUID({ name: "fake Honda Chinese v2" }); // this object is not assignable to type 'IVehicle'
 
 
   return (
