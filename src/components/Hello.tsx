@@ -7,10 +7,12 @@ export interface Props {
   incrementSmiles: () => void;
 }
 
-const Hello = ({ name, enthusiasmLevel = 1, changeName, incrementSmiles }: Props) => {
+const Hello = ({ name, enthusiasmLevel, changeName, incrementSmiles }: Props) => {
+  const nameString = `Hello ${name}${getExclamationMarks(enthusiasmLevel)}`;
+
   return (
     <div style={{ marginBottom: "20px" }}>
-      Hello {name + getExclamationMarks(enthusiasmLevel)}
+      {nameString}
       <button name="btn1" onClick={changeName}>Change</button>
       <button name="btn2" onClick={incrementSmiles}>Smile++</button>
     </div>
@@ -23,33 +25,4 @@ export default Hello;
 const getExclamationMarks = (numChars: number, coeff: number = 2): string => {
   const repeatCar = '!';
   return repeatCar.repeat(numChars * coeff);
-  // return 123;
 }
-
-// ---- JS ----
-// const Hello = (Props) => {
-//   <div>
-//     {Props.name}
-//   </div>
-// }
-// export default Hello;
-
-// ---- class TS ----
-// class Hello extends React.Component<Props, object> {
-//   render() {
-//     const { name, enthusiasmLevel = 1 } = this.props;
-
-//     if (enthusiasmLevel <= 0) {
-//       throw new Error('You could be a little more enthusiastic. :D');
-//     }
-
-//     return (
-//       <div className="hello">
-//         <div className="greeting">
-//           Hello {name + getExclamationMarks(enthusiasmLevel)}
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-

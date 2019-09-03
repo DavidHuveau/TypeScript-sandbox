@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.css';
 import Home from './components/Home';
-import { Car, withUID, MotorBike } from './generic';
+// import { Car, withUID, MotorBike } from './generic';
 
 // const App: React.FC = () => {
 const App = () => {
+
+  return (
+    <div className="App">
+      <Home />
+      <Home name="Dave"/>
+    </div>
+  );
 
   // let m2 = new Animal("King kong");
   // console.log(m2.displayTheName());
@@ -43,14 +50,6 @@ const App = () => {
   // a = withUID(new MotorBike("Honda VFR 750"));
   // a = withUID({ model: "fake Honda Chinese v1" }); // this object is assignable to type 'IVehicle'
   // const b = withUID({ name: "fake Honda Chinese v2" }); // this object is not assignable to type 'IVehicle'
-
-
-  return (
-    <div className="App">
-      <Home />
-      <Home name="Dave"/>
-    </div>
-  );
 }
 
 export default App;

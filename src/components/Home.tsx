@@ -13,13 +13,9 @@ interface State {
 // class Home extends React.Component<{}, State> {
 class Home extends Component<Props, State> {
 
-  // static defaultProps: Partial<Props> = {
-  //   name: "David"
-  // };
-
   constructor(props: Props) {
     super(props);
-    
+
     this.changeName = this.changeName.bind(this);
     this.incrementSmiles = this.incrementSmiles.bind(this);
 
